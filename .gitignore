@@ -1,0 +1,12 @@
+# raw data and downloaded references
+data/raw/*
+references/source_projects/*
+*.zip
+
+# Python / notebook
+__pycache__/
+.ipynb_checkpoints/
+
+# system files
+.DS_Store
+.env
