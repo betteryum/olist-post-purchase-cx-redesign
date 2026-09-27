@@ -1,0 +1,2 @@
+population,eligible_orders,late_orders,on_time_or_early_orders,late_rate_pct,mean_delay_days_late,median_delay_days_late,p90_delay_days_late,max_delay_days_late,mean_actual_delivery_duration_days,median_actual_delivery_duration_days,mean_estimated_delivery_duration_days,median_estimated_delivery_duration_days
+eligible_delivered_orders,96470,6534,89936,6.77,10.62,7.0,22.0,188,12.5,10.0,24.37,24.0

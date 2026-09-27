@@ -1,0 +1,6 @@
+record_type,population,orders,pct_of_all_orders,definition
+total,all_orders,99441,100.0,master_order_table 中全部订单
+partition,eligible_delivery_analysis,96470,97.012,delivered 且 actual / estimated delivery date 均非空
+partition,excluded_non_delivered,2963,2.98,order_status 不是 delivered
+partition,excluded_delivered_missing_actual_date,8,0.008,delivered 但缺 actual delivery date
+partition,excluded_delivered_missing_estimated_date,0,0.0,delivered、有 actual date，但缺 estimated delivery date

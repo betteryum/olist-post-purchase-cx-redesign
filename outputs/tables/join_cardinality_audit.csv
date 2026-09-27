@@ -1,0 +1,20 @@
+check,value,interpretation
+orders rows,99441,Base order population
+unique order_id in orders,99441,Should equal orders rows
+duplicate order_id rows in orders,0,Must be 0
+unique customer_id,99441,Order-linked customer key
+unique customer_unique_id,96096,Person-level key for future repeat-purchase analysis
+orders without matching customer,0,Must be 0 for a complete customer join
+orders with >1 item row,9803,Raw item join would fan out these orders
+max item rows on one order,21,Upper bound of item-level fan-out
+orders with >1 seller,1278,Single-seller attribution is unsafe for these orders
+max sellers on one order,5,Supports later order-seller bridge
+orders with >1 payment row,2961,Raw payment join would fan out these orders
+max payment rows on one order,29,Upper bound of payment fan-out
+orders with >1 review row,547,Reviews require a deterministic order-level rule
+multi-review orders with conflicting scores,202,Arbitrary first-row dedupe could change the score
+review_id values spanning >1 order,789,Some review IDs are shared across orders; later review analysis must note non-independence
+geolocation zip prefixes with >1 row,17972,Raw geolocation is many-to-one by zip prefix and should not be directly joined to order grain
+orders with >1 category,786,Single-category attribution is unsafe for these orders
+products with missing raw category,610,Retained as explicit 'unknown' category
+products with raw category but no English translation,13,Falls back to the original Portuguese category name

@@ -1,0 +1,16 @@
+check,value,expected,status
+source orders rows,99441,99441 for this snapshot / equals unique order_id,PASS
+master rows equal source orders,99441,99441,PASS
+master unique order_id,99441,99441,PASS
+master duplicate order_id rows,0,0,PASS
+customer join missing customer_unique_id,0,0,PASS
+order_item_agg unique order_id,0,0,PASS
+payment_agg unique order_id,0,0,PASS
+reviews_deduped unique order_id,0,0,PASS
+review scores outside 1-5,0,0,PASS
+analysis rows equal eligible flag,96470,96470,PASS
+analysis unique order_id,96470,96470,PASS
+analysis non-delivered rows,0,0,PASS
+analysis missing actual delivery date,0,0,PASS
+analysis missing estimated delivery date,0,0,PASS
+analysis missing delay_days,0,0,PASS
